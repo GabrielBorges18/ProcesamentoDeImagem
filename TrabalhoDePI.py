@@ -6,12 +6,29 @@ pixels = []
 maiorValor = 0
 
 #Valores da aula(Para testes) - Necessario comentar ou remover o While de inserção
-pixels = [0,0,4,6,8,8,4,7,8,9,9,4,3,2,3,8,2,2,1,0]
-maiorValor = 9
+#pixels = [0,0,4,6,8,8,4,7,8,9,9,4,3,2,3,8,2,2,1,0]
+#maiorValor = 9
 
 #Começa loop para inserção dos Valores
 i = 0
-
+#Input dos valores
+print("Insira os valores para iniciar o vetor de pixels (Recomendado números pequenos para facilitar visualização dos resultados) ")
+while i < 20:
+    num = input("Insira um Valor para a posição: %d Do vetor de Pixels\r\n" % i)
+    try:
+        #Tenta converter numero para float(Retornará erro caso seja invalido)
+        valor = int(num)
+        #Chegou aqui, é número valido, insere no Vetor de Pixels
+        pixels.append(valor)
+        #Salva maior Valor
+        if(maiorValor < valor):
+            #Valor limite de intensidade
+            maiorValor = valor
+        #Incrementa variavel contadora
+        i = i + 1
+    except ValueError:
+        #Deu erro ao converter, não é valor Inteiro Valido
+        print("Valor Invalido, por favor insira um valor númerico valido!")
 # Total de pixels da Imagem (N)
 N = 20
 
